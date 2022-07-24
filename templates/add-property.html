@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}
+
+    Add To Rent - Rent A Port
+
+{% endblock title %}
+{% block body %}
+    {% load static %}
+
+    <section class="py-5 mt-5">
+
+
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" style="z-index: 2;" role="alert">
+                <strong>Hay Buddy!</strong> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+
+
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">List your property for rent</h2>
+                    <p class="text-muted w-lg-50">Add your rental listing on Rent A Port- it is 100% free!. Don&#39;t
+                        miss out by listing your property today. You can always pause and/or remove your listing.</p>
+                </div>
+            </div>
+
+
+            <form method="post" action="/add" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-3">
+                        <h1>Location of the property<br/><br/></h1>
+                        <div><label class="form-label fs-5 mx-3" for="Address">Address :</label>
+                            <textarea class="form-control form-control-sm w-100 rounded" name="Address"
+                                      placeholder="Address" rows="1" required></textarea></div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-xxl-auto my-3">
+                        <h1>General information<br/></h1>
+                    </div>
+                </div>
+                <div class="row row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3">Rent :</label></div>
+                        <input class="form-control form-control-sm rounded" type="number" name="Rent" placeholder="Rent"
+                               required/>
+                    </div>
+                    <div class="col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3">Deposit :</label></div>
+                        <input class="form-control form-control-sm rounded" type="number" name="Deposit"
+                               placeholder="Deposit" required/>
+                    </div>
+                    <div class="col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3">Maintenance :</label></div>
+                        <input class="form-control form-control-sm rounded" type="number" name="Maintenance"
+                               placeholder="Maintenance " required/>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-xxl-auto my-3">
+                        <h1>Contact details<br/></h1>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3">Phone number :</label></div>
+                        <input class="form-control form-control-sm rounded" type="tel" name="Phone"
+                               placeholder="Phone number" required/>
+                    </div>
+                    <div class="col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3">Email :</label></div>
+                        <input class="form-control form-control-sm rounded" type="email" name="email"
+                               placeholder="Email" required/>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-xxl-auto my-3">
+                        <h1>Images</h1>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-12 my-3">
+                        <div><label class="form-label fs-5 mx-3">Inside Image :</label><input
+                                class="form-control form-control-sm rounded" type="file" accept="image/*" required
+                                name="in_img"/></div>
+                    </div>
+                    <div class="col-12 my-3">
+                        <div><label class="form-label fs-5 mx-3">Outside Image :</label><input
+                                class="form-control form-control-sm rounded" type="file" accept="image/*" required
+                                name="out_img"/></div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                    <div class="col-12 my-3 w-100">
+                        <div class="d-xxl-flex justify-content-xxl-center">
+                            <button class="btn btn-primary w-100" type="submit">ADD</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endblock body %}
