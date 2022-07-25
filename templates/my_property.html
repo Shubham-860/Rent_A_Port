@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}
+
+    My Property - Rent A Port
+
+{% endblock title %}
+{% block body %}
+    {% load static %}
+
+
+    {% if my_property %}
+
+
+
+        <section class="container py-5 mt-5">
+            <div class="py-5">
+                <div class="row mx-auto" style="/*max-width: 700px;*/">
+                    <div class="col text-center">
+                        <h1>Images</h1>
+                    </div>
+                    <div class="col text-center">
+                        <h1>Charges</h1>
+                    </div>
+                    <div class="col text-center">
+                        <h1>Contact</h1>
+                    </div>
+                    <div class="col text-center">
+                        <h1>Address</h1>
+                    </div>
+                    <div class="col text-center">
+                        <h1>Delete</h1>
+                    </div>
+                </div>
+
+                {% for p in my_property %}
+
+                    <div class="row mx-auto" ">
+
+                    <div class="col-xxl-3 h-50">
+                        <div class="d-lg-flex d-xl-flex d-xxl-flex">
+                            <div class="m-3"><a href="{{ p.in_img.url }}"
+                                                target="_blank"><img class="rounded img-fluid shadow fit-cover"
+                                                                     src="{{ p.in_img.url }}"
+                                                                     style="max-height: 135px;"/></a></div>
+                            <div class="m-3"><a href="{{ p.out_img.url }}"
+                                                target="_blank"><img class="rounded img-fluid shadow fit-cover"
+                                                                     src="{{ p.out_img.url }}"
+                                                                     style="max-height: 135px;"/></a></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p class="mb-1">Rent : {{ p.rent }}</p>
+                        <p class="mb-1">Deposit : {{ p.deposit }}</p>
+                        <p class="mb-1">Maintenance : {{ p.maintenance }}</p>
+                    </div>
+                    <div class="col">
+                        <p class="mb-1">Phone: {{ p.phone }}</p>
+                        <p class="mb-1">Mail : {{ p.mail }}</p>
+                    </div>
+                    <div class="col">
+                        <p class="mb-1">Address :</p>{{ p.address }}
+
+                        </p>
+                    </div>
+                    <div class="col d-xxl-flex justify-content-xxl-center pt-3">
+                        <div>
+                            <a href="{% url 'del_property' p.id %}">
+                                <svg class="bi bi-trash fs-1 text-warning" xmlns="http://www.w3.org/2000/svg"
+                                     width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                    <path fill-rule="evenodd"
+                                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </section>
+    {% else %}
+        <div>
+            <h1 class="d-xxl-flex justify-content-xxl-center">Empty</h1>
+            <h1 class="d-xxl-flex justify-content-xxl-center">List your property for <a href="/add">rent</a></h1>
+        </div>
+    {% endif %}
+{% endblock body %}

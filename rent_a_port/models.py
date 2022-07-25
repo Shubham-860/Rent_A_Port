@@ -32,3 +32,7 @@ class Property(models.Model):
     uid = models.IntegerField()
     in_img = models.ImageField(upload_to=filepath, null=True)
     out_img = models.ImageField(upload_to=filepath, null=True)
+
+
+class NewsLetter(models.Model):
+    news_mail = models.CharField(max_length=50)

@@ -1,8 +1,9 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
-from rent_a_port.models import ContactForm, Property
+from rent_a_port.models import ContactForm, Property, NewsLetter
 from datetime import datetime
 import PIL
 
@@ -10,6 +11,11 @@ import PIL
 # Create your views here.
 
 def index(request):
+    if request.method == "POST":
+        mail = request.POST["email"]
+        news = NewsLetter(news_mail=mail)
+        news.save()
+        messages.success(request, "E-mail submitted successfully")
     return render(request, "index.html")
 
 
@@ -42,7 +48,7 @@ def signup(request):
         fname = request.POST["fname"]
         lname = request.POST["lname"]
         username = request.POST["username"]
-        number = request.POST["number"]
+        contact_number = request.POST["number"]
         email = request.POST["email"]
         password = request.POST["pass"]
         password2 = request.POST["passc"]
@@ -63,7 +69,7 @@ def signup(request):
             myuser = User.objects.create_user(username, email, password)
             myuser.first_name = fname
             myuser.last_name = lname
-            myuser.contact_number = number
+            myuser.contact_number = contact_number
 
             myuser.save()
 
@@ -91,8 +97,9 @@ def about(request):
 
 
 def add_p(request):
-    if uid < 0:
-        return render(request, "login.html")
+    user = request.user
+    if not user.id:
+        return redirect('login')
 
     if request.method == "POST":
         address = request.POST.get('Address')
@@ -105,7 +112,7 @@ def add_p(request):
         out_img = request.FILES["out_img"]
 
         add_property = Property(address=address, rent=rent, deposit=deposit, maintenance=maintenance, phone=phone,
-                                mail=mail, uid=uid, in_img=in_img, out_img=out_img)
+                                mail=mail, uid=user.id, in_img=in_img, out_img=out_img)
         add_property.save()
         messages.success(request, "Property Added  successfully")
         print("saved")
@@ -139,3 +146,22 @@ def propertys(request):
 
 def base(request):
     return render(request, "base.html")
+
+
+def my_property(request):
+    user = request.user
+    my_property = Property.objects.filter(uid=uid)
+    context = {"my_property": my_property, "uid": user.id}
+    return render(request, "my_property.html", context)
+
+
+def del_property(request, event_id):
+    del_property = Property.objects.get(id=event_id)
+    del_property.delete()
+    return redirect("my_property")
+
+
+def profile(request):
+    user = request.user
+    context = {"user": user}
+    return render(request, "profile.html", context)

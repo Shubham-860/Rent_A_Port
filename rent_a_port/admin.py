@@ -5,3 +5,4 @@ from rent_a_port.models import *
 
 admin.site.register(ContactForm)
 admin.site.register(Property)
+admin.site.register(NewsLetter)
