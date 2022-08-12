@@ -32,7 +32,14 @@ class Property(models.Model):
     uid = models.IntegerField()
     in_img = models.ImageField(upload_to=filepath, null=True)
     out_img = models.ImageField(upload_to=filepath, null=True)
+    show = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.address
 
 
 class NewsLetter(models.Model):
     news_mail = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.news_mail
