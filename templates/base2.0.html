@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>  {% block title %} Home - Rent A Port {% endblock title %}  </title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'assets/css/Account-setting-or-edit-profile.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/RAP.png' %}">
+</head>
+
+<body style="/*background: url(&quot;design.jpg&quot;);*/background-position: 0 -60px;" class="bg-dark text-light">
+<nav class="navbar navbar-dark navbar-expand-md fixed-top navbar-shrink py-2" id="mainNav">
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span>Rent A Port</span></a></div>
+</nav>
+<hr class="py-4" style="height:0; width:0">
+{% block body %}
+
+{% endblock body %}
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/bs-init.js' %}"></script>
+<script src="{% static 'assets/js/bold-and-dark.js' %}"></script>
+<script src="https://geodata.solutions/includes/countrystate.js"></script>
+</body>
+
+</html>

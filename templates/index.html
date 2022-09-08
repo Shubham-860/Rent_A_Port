@@ -8,12 +8,14 @@
 
     {% for message in messages %}
         <div class="alert alert-{{ message.tag }} alert-dismissible fade show" style="z-index: 20;" role="alert">
-            <strong>Holy Buddy!</strong> {{ message }}
+            <strong>{{ message }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     {% endfor %}
 
     <header class="bg-dark pt-5">
+
+
         <div class="container pt-4 pt-xl-5">
             <div class="row">
                 <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
@@ -29,7 +31,7 @@
                                 src="{% static 'assets/img/Houses/pexels-matheus-bertelli-2980955.jpg' %}" alt=""></div>
                         <div style="position: relative;flex: 0 0 45%;transform: translate3d(-5%, 20%, 0);"><img
                                 class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.4"
-                                src="{% static 'assets/img/Houses/pexels-thgusstavo-santana-2102587%20(1).jpg' %}"
+                                src="{% static 'assets/img/Houses/pexels-thgusstavo-santana-2102587 (1).jpg' %}"
                                 alt=""></div>
                         <div style="position: relative;flex: 0 0 60%;transform: translate3d(0, 0%, 0);"><img
                                 class="img-fluid" data-bss-parallax="" data-bss-parallax-speed="0.25"
@@ -117,7 +119,8 @@
                     <h2 class="fw-bold mb-2">Subscribe to our newsletter</h2>
 
                 </div>
-                <form class="d-flex justify-content-center flex-wrap flex-lg-nowrap" method="post" action="/index">{% csrf_token %}
+                <form class="d-flex justify-content-center flex-wrap flex-lg-nowrap" method="post"
+                      action="/index">{% csrf_token %}
                     <div class="my-2"><input class="border rounded-pill shadow-sm form-control w-100" type="email"
                                              name="email" placeholder="Your Email"></div>
                     <div class="my-2">

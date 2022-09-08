@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}
+
+{% endblock title %}
+{% block body %}
+    {% load static %}
+
+
+
+
+
+
+    <section class="py-5 mt-5 container">
+
+        <div class="container">
+            {% if messages %}
+             {% for message in messages %}
+             <div class="alert alert-danger w-75" style="position: absolute; z-index: 2;" role="alert">
+                {{ message }}
+            </div>
+             {% endfor %}
+
+            {% endif %}
+
+
+            <div class="row">
+                <div class="col mt-3">
+                    <h1 class="text-center py-5">Profile</h1>
+                </div>
+            </div>
+            <form class="form-control bg-dark text-light border-0" action="/profile_update" method="post">
+                {% csrf_token %}
+                <div class="row gx-0 justify-content-center">
+
+                    <div class="col-lg-2 col-xl-2 col-xxl-2 text-center d-xxl-flex justify-content-xxl-center mt-2 pb-4">
+                        <svg class="bi bi-person-circle text-start" xmlns="http://www.w3.org/2000/svg" width="1em"
+                             height="1em" fill="currentColor" viewBox="0 0 16 16" style="font-size: 7rem;">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="col-5 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center mt-2">
+                        <div class="mb-4"><label id="fname" class="form-label pb-2">First Name :  </label></div>
+                        <div class="mb-4"><label id="username" class="form-label pb-2">Username :  </label></div>
+                        <div class="mb-4"><label id="lname" class="form-label pb-2">last Name : </label></div>
+                        <div class="mb-4"><label id="lname" class="form-label pb-2">E-mail : </label></div>
+
+                    </div>
+                    <div class="col-6 col-sm-7 col-md-7 col-lg-5 col-xl-5 col-xxl-5 text-center my-auto mt-2">
+                        <div class="mb-3"><input class="form-control-sm w-100" name="fname" type="text"
+                                                 value="{{ user.first_name }}"
+                                                 placeholder="First Name : "/>
+                        </div>
+                        <div class="mb-3"><input class="form-control-sm w-100" name="username" type="text"
+                                                 value="{{ user.username }}"
+                                                 placeholder="username "/>
+                        </div>
+                        <div class="mb-3"><input class="form-control-sm w-100" name="lname" type="text"
+                                                 value="{{ user.last_name }}"
+                                                 placeholder="last Name : "/>
+                        </div>
+                        <div class="mb-3"><input class="form-control-sm w-100" name="lname" type="text"
+                                                 value="{{ user.email }}"
+                                                 placeholder="last Name : " readonly/>
+                        </div>
+                        <div class="mb-3"><a href="/change_password/">Change Password<br/></a></div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script>
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 2000);
+    </script>
+
+{% endblock body %}

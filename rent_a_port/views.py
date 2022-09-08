@@ -1,11 +1,13 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse, redirect
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib import messages
 from rent_a_port.models import ContactForm, Property, NewsLetter
 from datetime import datetime
-import PIL
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -16,10 +18,11 @@ def index(request):
         news = NewsLetter(news_mail=mail)
         news.save()
         messages.success(request, "E-mail submitted successfully")
+
     return render(request, "index.html")
 
 
-def loginu(request):
+def loginu(request, previous_url=0):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -34,8 +37,11 @@ def loginu(request):
             return render(request, "index.html", {'fname': fname, "username": username})
         else:
             messages.error(request, "bad credentials")
-
-    return render(request, "login.html")
+    previous_url = int(previous_url)
+    if previous_url == 0:
+        return render(request, "login.html")
+    else:
+        return HttpResponseRedirect(previous_url)
 
 
 def logoutu(request):
@@ -131,17 +137,17 @@ def propertys(request):
 
         print(serched_property)
         context = {'serched_property': serched_property, 'searched': searched}
-        return render(request, "property.html", context)
+        return render(request, "propertys.html", context)
     else:
 
-        return render(request, "property.html")
+        return render(request, "propertys.html")
 
 
 # def propertys(request):
 #     all_property = Property.objects.filter()
 #     context = {'all_property': all_property}
 #
-#     return render(request, "property.html", context)
+#     return render(request, "propertys.html", context)
 
 
 def base(request):
@@ -155,8 +161,8 @@ def my_property(request):
     return render(request, "my_property.html", context)
 
 
-def del_property(request, event_id):
-    del_property = Property.objects.get(id=event_id)
+def del_property(request, Property_id):
+    del_property = Property.objects.get(id=Property_id)
     del_property.delete()
     return redirect("my_property")
 
@@ -165,3 +171,45 @@ def profile(request):
     user = request.user
     context = {"user": user}
     return render(request, "profile.html", context)
+
+
+def contactInfoMail(request, pid):
+    user = request.user
+    pid = int(pid)
+    product = Property.objects.get(id=pid)
+    context = {"product": product}
+    send_mail("Property you request", "body", "team.rentaport@gmail.com",
+              [user.email], fail_silently=True)
+    return render(request, "contactInfoMailSent.html", context)
+
+
+def rough(request, pid, abcd):
+    print("ia : ", pid)
+    pid = int(pid)
+    product = Property.objects.get(id=pid)
+    context = {"product": product, "rent": request.get_full_path()}
+    return render(request, "Rough.html", context)
+    # return HttpResponseRedirect("/propertys")
+
+
+def profile_update(request):
+    user = request.user
+    uid = user.id
+    if request.method == "POST":
+
+        fname = request.POST["fname"]
+        lname = request.POST["lname"]
+        username = request.POST["username"]
+        if (user.first_name == fname) and (user.last_name == lname) and (user.username == username):
+            messages.error(request, "Nothing changed")
+        elif User.objects.filter(username=username):
+            messages.error(request, "This username is taken")
+        else:
+            User.objects.filter(id=uid).update(first_name=fname, last_name=lname, username=username)
+            messages.success(request, "Profile Updated successfully")
+            user = request.user
+            context = {"user": user}
+            return render(request, "profile.html", context)
+    user = request.user
+    context = {"user": user}
+    return render(request, "profile_update.html", context)

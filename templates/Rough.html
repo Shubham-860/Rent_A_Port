@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+
+{% endblock title %}
+{% block body %}
+    {% load static %}
+
+
+    <p class="pt-5 mt-5">
+        <br/>pid : {{ product.id }}
+        <br/>padd:{{ product.address }}
+        <br/>pmail:{{ product.mail }}
+        <br/>rent: {{ rent }}
+    </p>
+
+{% endblock body %}
