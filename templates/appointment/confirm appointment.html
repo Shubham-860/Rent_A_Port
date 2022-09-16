@@ -1,0 +1,41 @@
+{% extends 'base2.0.html' %}
+{% block title %}
+
+{% endblock title %}
+{% block body %}
+    {% load static %}
+
+    <section class="py-5">
+        <div class="container">
+
+            {% if already_set %}
+
+
+
+                <div class="row mb-4 mb-lg-5">
+                    <div class="col-md-8 col-xl-8 text-center mx-auto">
+                        <h3 class="fw-semibold"><strong>You already confirmed the time and date of the
+                            appointment.</strong></h3>
+                    </div>
+                </div>
+            {% else %}
+
+                <div class="row mb-4 mb-lg-5">
+                    <div class="col-md-8 col-xl-8 text-center mx-auto">
+                        <h3 class="fw-semibold">The appointment&#39;s time and date have been confirmed.</h3>
+                    </div>
+
+                </div>
+            {% endif %}
+
+
+            <div class="row mb-4 mb-lg-5">
+                <div class="col-md-8 col-xl-8 col-xxl-5 text-center mx-auto"><img
+                        class="img-fluid border rounded img-thumbnail"
+                        src="{% static 'assets/img/gif/image_processing20210422-11473-j96faa.gif' %}"/></div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock body %}

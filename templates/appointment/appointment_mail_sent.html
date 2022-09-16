@@ -1,0 +1,23 @@
+{% extends 'base2.0.html' %}
+{% block title %}
+
+{% endblock title%}
+{% block body %}
+{% load static %}
+
+<section class="pt-5 mt-2">
+    <div class="container pt-5">
+        <div class="row mb-2">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold">Email sent successfully</h2>
+                <p class="">Once the owner has confirmed the time and date, we'll get in touch with you.</p>
+            </div>
+        </div>
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto"><img class="img-fluid border rounded img-thumbnail" src="{% static 'assets/img/gif/dfsd.gif' %}" /></div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock body %}

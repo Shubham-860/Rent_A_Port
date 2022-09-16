@@ -26,8 +26,9 @@ urlpatterns = [
     path('my_property', views.my_property, name="my_property"),
     path('profile', views.profile, name="profile"),
     path('profile_update', views.profile_update, name="profile_update"),
-    path('change_password/', auth_views.PasswordChangeView.as_view(template_name='change_password.html'), name="change_password/"),
+    path('change_password/', auth_views.PasswordChangeView.as_view(template_name='Password/change_password.html'), name="change_password/"),
     path('appointment/<pid>', views.appointment, name="appointment"),
+    path('confirm_appointment/<uid>/', views.confirm_appointment, name="confirm_appointment"),
 
     # temp
     path('contactInfoMail/<pid>/<abcd>', views.rough, name="contactInfoMail"),
@@ -40,19 +41,19 @@ urlpatterns = [
 
     path('logout', views.logout, name="about"),
 
-    path('reset_password/', auth_views.PasswordResetView.as_view(template_name='password_reset.html'),
+    path('reset_password/', auth_views.PasswordResetView.as_view(template_name='Password/password_reset.html'),
          name="reset_password"),
 
     path('reset_password_sent/',
-         auth_views.PasswordResetDoneView.as_view(template_name="password_reset_sent.html"),
+         auth_views.PasswordResetDoneView.as_view(template_name="Password/password_reset_sent.html"),
          name="password_reset_done"),
 
     path('reset/<uidb64>/<token>/',
-         auth_views.PasswordResetConfirmView.as_view(template_name="password_reset_form.html"),
+         auth_views.PasswordResetConfirmView.as_view(template_name="Password/password_reset_form.html"),
          name="password_reset_confirm"),
 
     path('reset_password_complete/',
-         auth_views.PasswordResetCompleteView.as_view(template_name="password_reset_done.html"),
+         auth_views.PasswordResetCompleteView.as_view(template_name="Password/password_reset_done.html"),
          name="password_reset_complete"),
 
 ]

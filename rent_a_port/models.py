@@ -43,7 +43,9 @@ class Appointment(models.Model):
     appointment_date_time = models.DateTimeField()
     message = models.CharField(max_length=500)
     user_id = models.IntegerField()
-
+    property_id = models.IntegerField()
+    uuid = models.CharField(max_length=100)
+    appointment_set = models.BooleanField()
 
 class Site(models.Model):
     # validation

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="change pass&#10;mail half">
+    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="change pass&#10;mail edit">
+      <change afterPath="$PROJECT_DIR$/rent_a_port/migrations/0013_appointment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/gif/image_processing20210422-11473-j96faa.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/appointment/confirm appointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc5be74b-d775-4c7e-886d-c772e24700aa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bc5be74b-d775-4c7e-886d-c772e24700aa.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rent_a_port/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rent_a_port/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rent_a_port/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appointment_mail_sent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/appointment_mail_sent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/password_reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset_done.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/password_reset_sent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset_sent.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,19 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "database.data.extractors.current.id": "Comma-separated (CSV)_id",
+    "last_opened_file_path": "F:/Python/RAP/static/assets/img/gif"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Python\RAP\static\assets\img\gif" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Python\RAP\templates\Password" />
+      <recent name="F:\Python\RAP\templates\appointment" />
       <recent name="F:\Python\RAP\static\assets\img\gif" />
     </key>
   </component>
@@ -90,7 +109,8 @@
       <workItem from="1662725254510" duration="17963000" />
       <workItem from="1662805314562" duration="603000" />
       <workItem from="1663104329633" duration="14463000" />
-      <workItem from="1663322242278" duration="1475000" />
+      <workItem from="1663322242278" duration="4059000" />
+      <workItem from="1663359250325" duration="8506000" />
     </task>
     <task id="LOCAL-00001" summary="change pass&#10;mail half">
       <created>1662655701542</created>
@@ -106,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662655720730</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="change pass&#10;mail edit">
+      <created>1663323809260</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663323809260</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change pass&#10;mail edit">
+      <created>1663323851404</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663323851404</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change pass&#10;mail half" />
-    <option name="LAST_COMMIT_MESSAGE" value="change pass&#10;mail half" />
+    <MESSAGE value="change pass&#10;mail edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="change pass&#10;mail edit" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -5,15 +7,20 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib import messages
-from rent_a_port.models import ContactForm, NewsLetter
+from rent_a_port.models import ContactForm, NewsLetter, Appointment
 from rent_a_port.models import Site as Property
 from datetime import datetime
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
+
+# from django.contrib.auth import get_user_model
 
 # Create your views here.
 
 def index(request):
+    # user = request.user
+    # print(f"Hostname: {request.get_host()}/index")
     if request.method == "POST":
         mail = request.POST["email"]
         news = NewsLetter(news_mail=mail)
@@ -236,7 +243,7 @@ def profile_update(request):
 def site(request, pid):
     user = request.user
     log_in = False
-    if user is not None:
+    if user.is_authenticated:
         log_in = True
     pid = int(pid)
     product = Property.objects.get(id=pid)
@@ -288,19 +295,69 @@ def edit_property(request, pid):
     return HttpResponseRedirect("/my_property")
 
 
-def appointment(request,pid):
+def appointment(request, pid):
     user = request.user
     if request.method == "POST":
         product = Property.objects.get(id=pid)
+        owner = User.objects.get(id=product.uid)
+
         owner_id = product.uid
         appointment_date_time = request.POST["date_time"]
         message = request.POST["message"]
         user_id = user.id
-        print(f"owner_id: {owner_id},appointment_date_time: {appointment_date_time},message: {message},user_id:{user_id}")
-        # user = request.user
-        # pid = int(pid)
-        # product = Property.objects.get(id=pid)
-        # context = {"product": product}
-        # send_mail("Property you request", "body", "team.rentaport@gmail.com",
-        #           [user.email], fail_silently=True)
-    return render(request, "appointment_mail_sent.html")
+        pid = pid
+        uid = uuid.uuid1()
+
+        appointment_save = Appointment(owner_id=owner.id, appointment_date_time=appointment_date_time, message=message,
+                                       user_id=user_id, property_id=pid, uuid=uid, appointment_set=False)
+        appointment_save.save()
+        print("appointment saved successfully!")
+
+        # print(f"owner_id: {owner_id},appointment_date_time: {appointment_date_time},message: {message},user_id:{user_id},product:{product} and uid : {uid} ,owner : {owner}")
+        # mail to ownee
+        body = f'''
+Regards, {owner.first_name},
+
+wants to schedule a meeting at {appointment_date_time}.
+
+message: {message}
+
+To confirm, go to the following link: 
+
+http://127.0.0.1:8000/confirm_appointment/{uid}/
+
+OR
+
+For further conversation, you can also email the Customer.
+
+E-Mail : {user.email}
+
+Team Rent A Port
+        '''
+        send_mail("Schedule a meeting", body, "team.rentaport@gmail.com",
+                  [owner.email], fail_silently=False)
+    return render(request, "appointment/appointment_mail_sent.html")
+
+
+def confirm_appointment(request, uid):
+    meeting = Appointment.objects.get(uuid=uid)
+    if not meeting.appointment_set:
+        owner = User.objects.get(id=int(meeting.owner_id))
+        user = User.objects.get(id=int(meeting.user_id))
+
+        Appointment.objects.filter(uuid=uid).update(appointment_set=True)
+        body = f'''
+Dear {user.first_name}
+    
+On {meeting.appointment_date_time}, has been confirmed by {owner.first_name} as the meeting time.
+    
+You may also email the owner for more discussion.
+    
+E-Mail : {owner.email}
+    
+Group Rent A Port
+                '''
+        send_mail("Meeting confirmed", body, "team.rentaport@gmail.com",
+                  [user.email], fail_silently=False)
+    content = {"already_set": meeting.appointment_set}
+    return render(request, "appointment/confirm appointment.html",content)
