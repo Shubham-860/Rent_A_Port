@@ -146,9 +146,9 @@ def add_p(request):
         add_property.save()
         messages.success(request, "Property Added  successfully")
         print("saved")
-        return render(request, "add-property.html")
+        return render(request, "property/add-property.html")
 
-    return render(request, "add-property.html")
+    return render(request, "property/add-property.html")
 
 
 def propertys(request):
@@ -161,10 +161,10 @@ def propertys(request):
 
         print(serched_property)
         context = {'serched_property': serched_property, 'searched': searched}
-        return render(request, "propertys.html", context)
+        return render(request, "property/propertys.html", context)
     else:
 
-        return render(request, "propertys.html")
+        return render(request, "property/propertys.html")
 
 
 # def propertys(request):
@@ -175,14 +175,14 @@ def propertys(request):
 
 
 def base(request):
-    return render(request, "base.html")
+    return render(request, "base/base.html")
 
 
 def my_property(request):
     user = request.user
     my_property = Property.objects.filter(uid=user.id)
     context = {"my_property": my_property, "uid": user.id}
-    return render(request, "my_property.html", context)
+    return render(request, "property/my_property.html", context)
 
 
 def del_property(request, Property_id):
@@ -205,7 +205,7 @@ def contactInfoMail(request, pid):
     context = {"product": product}
     send_mail("Property you request", "body", "team.rentaport@gmail.com",
               [user.email], fail_silently=True)
-    return render(request, "contactInfoMailSent.html", context)
+    return render(request, "Temp/contactInfoMailSent.html", context)
 
 
 def rough(request, pid, abcd):
@@ -213,7 +213,7 @@ def rough(request, pid, abcd):
     pid = int(pid)
     product = Property.objects.get(id=pid)
     context = {"product": product, "rent": request.get_full_path()}
-    return render(request, "Rough.html", context)
+    return render(request, "Temp/Rough.html", context)
     # return HttpResponseRedirect("/propertys")
 
 
@@ -249,7 +249,7 @@ def site(request, pid):
     product = Property.objects.get(id=pid)
 
     context = {"p": product, "rent": request.get_full_path(), "log_in": log_in}
-    return render(request, "property.html", context)
+    return render(request, "property/property.html", context)
 
 
 def edit_property(request, pid):
@@ -290,7 +290,7 @@ def edit_property(request, pid):
 
         messages.success(request, "Property Updated successfully")
         print("saved")
-        return render(request, "my_property.html")
+        return render(request, "property/my_property.html")
 
     return HttpResponseRedirect("/my_property")
 
