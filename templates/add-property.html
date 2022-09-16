@@ -7,93 +7,307 @@
 {% block body %}
     {% load static %}
 
+    {#    <section class="py-5 mt-5">#}
+    {##}
+    {##}
+    {#        {% for message in messages %}#}
+    {#            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" style="z-index: 2;" role="alert">#}
+    {#                <strong>Hay Buddy!</strong> {{ message }}#}
+    {#                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>#}
+    {#            </div>#}
+    {#        {% endfor %}#}
+    {##}
+    {##}
+    {#        <div class="container">#}
+    {#            <div class="row mb-5">#}
+    {#                <div class="col-md-8 col-xl-6 text-center mx-auto">#}
+    {#                    <h2 class="fw-bold">List your property for rent</h2>#}
+    {#                    <p class="text-muted w-lg-50">Add your rental listing on Rent A Port- it is 100% free!. Don&#39;t#}
+    {#                        miss out by listing your property today. You can always pause and/or remove your listing.</p>#}
+    {#                </div>#}
+    {#            </div>#}
+    {##}
+    {##}
+    {#            <form method="post" action="/add" enctype="multipart/form-data">{% csrf_token %}#}
+    {#                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-3">#}
+    {#                        <h1>Location of the property<br/><br/></h1>#}
+    {#                        <div><label class="form-label fs-5 mx-3" for="Address">Address :</label>#}
+    {#                            <textarea class="form-control form-control-sm w-100 rounded" name="Address"#}
+    {#                                      placeholder="Address" rows="1" required></textarea></div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-xxl-auto my-3">#}
+    {#                        <h1>General information<br/></h1>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-xxl-6 my-3">#}
+    {#                        <div><label class="form-label fs-5 mx-3">Rent :</label></div>#}
+    {#                        <input class="form-control form-control-sm rounded" type="number" name="Rent" placeholder="Rent"#}
+    {#                               required/>#}
+    {#                    </div>#}
+    {#                    <div class="col-xxl-6 my-3">#}
+    {#                        <div><label class="form-label fs-5 mx-3">Deposit :</label></div>#}
+    {#                        <input class="form-control form-control-sm rounded" type="number" name="Deposit"#}
+    {#                               placeholder="Deposit" required/>#}
+    {#                    </div>#}
+    {#                    <div class="col-xxl-6 my-3">#}
+    {#                        <div><label class="form-label fs-5 mx-3">Maintenance :</label></div>#}
+    {#                        <input class="form-control form-control-sm rounded" type="number" name="Maintenance"#}
+    {#                               placeholder="Maintenance " required/>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-xxl-auto my-3">#}
+    {#                        <h1>Contact details<br/></h1>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-xxl-6 my-3">#}
+    {#                        <div><label class="form-label fs-5 mx-3">Phone number :</label></div>#}
+    {#                        <input class="form-control form-control-sm rounded" type="tel" name="Phone"#}
+    {#                               placeholder="Phone number" required/>#}
+    {#                    </div>#}
+    {#                    <div class="col-xxl-6 my-3">#}
+    {#                        <div><label class="form-label fs-5 mx-3">Email :</label></div>#}
+    {#                        <input class="form-control form-control-sm rounded" type="email" name="email"#}
+    {#                               placeholder="Email" required/>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-xxl-auto my-3">#}
+    {#                        <h1>Images</h1>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-12 my-3">#}
+    {#                        <div><label class="form-label fs-5 mx-3">Inside Image :</label><input#}
+    {#                                class="form-control form-control-sm rounded" type="file" accept="image/*" required#}
+    {#                                name="in_img"/></div>#}
+    {#                    </div>#}
+    {#                    <div class="col-12 my-3">#}
+    {#                        <div><label class="form-label fs-5 mx-3">Outside Image :</label><input#}
+    {#                                class="form-control form-control-sm rounded" type="file" accept="image/*" required#}
+    {#                                name="out_img"/></div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">#}
+    {#                    <div class="col-12 my-3 w-100">#}
+    {#                        <div class="d-xxl-flex justify-content-xxl-center">#}
+    {#                            <button class="btn btn-primary w-100" type="submit">ADD</button>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </form>#}
+    {#        </div>#}
+    {#    </section>#}
+    {##}
+
+
+
+
+
+
+    {#    New add property#}
     <section class="py-5 mt-5">
 
 
         {% for message in messages %}
             <div class="alert alert-{{ message.tags }} alert-dismissible fade show" style="z-index: 2;" role="alert">
-                <strong>Hay Buddy!</strong> {{ message }}
+                <strong>{{ message }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         {% endfor %}
 
 
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2 class="fw-bold">List your property for rent</h2>
-                    <p class="text-muted w-lg-50">Add your rental listing on Rent A Port- it is 100% free!. Don&#39;t
-                        miss out by listing your property today. You can always pause and/or remove your listing.</p>
-                </div>
-            </div>
-
-
             <form method="post" action="/add" enctype="multipart/form-data">{% csrf_token %}
-                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-3">
-                        <h1>Location of the property<br/><br/></h1>
-                        <div><label class="form-label fs-5 mx-3" for="Address">Address :</label>
-                            <textarea class="form-control form-control-sm w-100 rounded" name="Address"
-                                      placeholder="Address" rows="1" required></textarea></div>
+                <div class="row">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2 class="fw-bold">List your property for rent</h2>
+                        <p class="text-muted w-lg-50">Add your rental listing on Rent A Port- it is 100% free!. Don&#39;t
+                            miss out by listing your property today. You can always pause and/or remove your
+                            listing.</p>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="row row-cols-1 row-cols-md-2 mx-auto mb-3">
+                    <div class="col-12 col-sm-12 col-md-12 col-xxl-12">
+                        <h1 class="mb-3">Property<br/></h1>
+                    </div>
+                    <div class="col">
+                        <div class="mb-2"><label class="form-label fs-5 mx-3" for="Description">Description
+                            :</label><textarea id="Description"
+                                               class="form-control form-control-sm w-100 rounded bg-light text-black"
+                                               name="Description"
+                                               placeholder="Description" rows="2" required maxlength="500"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-2"><label class="form-label fs-5 mx-3" for="Address">Address :</label><textarea
+                                class="form-control form-control-sm w-100 rounded bg-light text-black" name="Address"
+                                id="Address"
+                                placeholder="Address" rows="2" required minlength="10" maxlength="500"></textarea></div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
                     <div class="col-xxl-auto my-3">
                         <h1>General information<br/></h1>
                     </div>
                 </div>
-                <div class="row row-cols-md-2 mx-auto" style="max-width: 900px;">
-                    <div class="col-xxl-6 my-3">
-                        <div><label class="form-label fs-5 mx-3">Rent :</label></div>
-                        <input class="form-control form-control-sm rounded" type="number" name="Rent" placeholder="Rent"
-                               required/>
+                <div class="row row-cols-md-2 justify-content-center mx-auto">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Rent">Rent :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="number" id="Rent"
+                               name="Rent" placeholder="Rent" required/>
                     </div>
-                    <div class="col-xxl-6 my-3">
-                        <div><label class="form-label fs-5 mx-3">Deposit :</label></div>
-                        <input class="form-control form-control-sm rounded" type="number" name="Deposit"
-                               placeholder="Deposit" required/>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Deposit">Deposit :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="number"
+                               id="Deposit" name="Deposit" placeholder="Deposit" required/>
                     </div>
-                    <div class="col-xxl-6 my-3">
-                        <div><label class="form-label fs-5 mx-3">Maintenance :</label></div>
-                        <input class="form-control form-control-sm rounded" type="number" name="Maintenance"
-                               placeholder="Maintenance " required/>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Maintenance">Maintenance :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="number"
+                               id="Maintenance" name="Maintenance" placeholder="Maintenance " required/>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3" for="BHK">Bed Hall Kitchen :</label>
+                            <select class="form-select form-select-sm bg-light text-black" id="BHK" required name="BHK">
+                                <option value="HK">HK</option>
+                                <option value="1 BHK" selected>1 BHK</option>
+                                <option value="2 BHK">2 BHK</option>
+                                <option value="3 BHK">3 BHK</option>
+                                <option value="4 BHK">4 BHK</option>
+                            </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Floor">Floor number:</label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Floor" id="Floor">
+                            <option value="Ground floor" selected>Ground floor</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Pet">Pet-allowed:<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Pet" id="Pet">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                            <option value="Cats only">Cats only</option>
+                            <option value="Dogs only">Dogs only</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Parking">Parking :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Parking"
+                                id="Parking">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                            <option value="Bike only">Bike only</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Type">Property type :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Type" id="Type">
+                            <option value="House" selected>Row house</option>
+                            <option value="Apartment ">Apartment</option>
+                            <option value="Banglo ">Banglo</option>
+                            <option value="Other">Other</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Posted_by">Posted by :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Posted_by"
+                                id="Posted_by">
+                            <option value="Owner" selected>Owner</option>
+                            <option value="Dear">Dear</option>
+                            <option value="Other">Other</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Agreement_duration">Agreement duration
+                            :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required
+                                name="Agreement_duration" id="Agreement_duration">
+                            <option value="No" selected>No</option>
+                            <option value="3 Months">3 Months</option>
+                            <option value="6 Months">6 Months</option>
+                            <option value="9 Months">9 Months</option>
+                            <option value="1 Year">1 Year</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Available_from">Available
+                            from :<br/></label><input
+                                class="form-control form-control-sm bg-light text-black" type="date" required
+                                style="border-radius: 16px;" name="Available_from" id="Available_from"/></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3" for="Electricity_water">Electricity and water charges included :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required
+                                name="Electricity_water" id="Electricity_water">
+                            <option value="Yes" selected>Charges included</option>
+                            <option value="No">Charges not included</option>
+                        </select></div>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
                     <div class="col-xxl-auto my-3">
                         <h1>Contact details<br/></h1>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
                     <div class="col-xxl-6 my-3">
-                        <div><label class="form-label fs-5 mx-3">Phone number :</label></div>
-                        <input class="form-control form-control-sm rounded" type="tel" name="Phone"
+                        <div><label class="form-label fs-5 mx-3" for="Phone">Phone number :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="tel" name="Phone"
+                               id="Phone"
                                placeholder="Phone number" required/>
                     </div>
                     <div class="col-xxl-6 my-3">
-                        <div><label class="form-label fs-5 mx-3">Email :</label></div>
-                        <input class="form-control form-control-sm rounded" type="email" name="email"
-                               placeholder="Email" required/>
+                        <div><label class="form-label fs-5 mx-3" for="email">Email :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="email"
+                               name="email" placeholder="Email" id="email" required/>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
                     <div class="col-xxl-auto my-3">
                         <h1>Images</h1>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
                     <div class="col-12 my-3">
-                        <div><label class="form-label fs-5 mx-3">Inside Image :</label><input
-                                class="form-control form-control-sm rounded" type="file" accept="image/*" required
-                                name="in_img"/></div>
+                        <div><label class="form-label fs-5 mx-3" for="in_img">Inside Image :</label><input
+                                class="form-control form-control-sm rounded bg-light text-black" type="file"
+                                accept="image/*" required name="in_img" id="in_img"/></div>
                     </div>
                     <div class="col-12 my-3">
                         <div><label class="form-label fs-5 mx-3">Outside Image :</label><input
-                                class="form-control form-control-sm rounded" type="file" accept="image/*" required
-                                name="out_img"/></div>
+                                class="form-control form-control-sm rounded bg-light text-black" type="file"
+                                accept="image/*" required name="out_img"/></div>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
                     <div class="col-12 my-3 w-100">
                         <div class="d-xxl-flex justify-content-xxl-center">
                             <button class="btn btn-primary w-100" type="submit">ADD</button>
@@ -102,6 +316,9 @@
                 </div>
             </form>
         </div>
+
+
     </section>
+
 
 {% endblock body %}

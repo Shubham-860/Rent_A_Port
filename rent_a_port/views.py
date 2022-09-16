@@ -5,7 +5,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib import messages
-from rent_a_port.models import ContactForm, Property, NewsLetter
+from rent_a_port.models import ContactForm, NewsLetter
+from rent_a_port.models import Site as Property
 from datetime import datetime
 from django.core.mail import send_mail
 
@@ -32,8 +33,6 @@ def loginu(request, previous_url=0):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            global uid
-            uid = int(user.id)
             return render(request, "index.html", {'fname': fname, "username": username})
         else:
             messages.error(request, "bad credentials")
@@ -108,17 +107,35 @@ def add_p(request):
         return redirect('login')
 
     if request.method == "POST":
+        # Property
+        Description = request.POST.get('Description')
         address = request.POST.get('Address')
+
+        # General information
         rent = request.POST.get("Rent")
         deposit = request.POST["Deposit"]
-        maintenance = request.POST["Maintenance"]
+        Maintenance = request.POST["Maintenance"]
+        BHK = request.POST["BHK"]
+        Floor = request.POST["Floor"]
+        Pet = request.POST["Pet"]
+        Parking = request.POST["Parking"]
+        Type = request.POST["Type"]
+        Posted_by = request.POST["Posted_by"]
+        Agreement_duration = request.POST["Agreement_duration"]
+        Available_from = request.POST["Available_from"]
+        Electricity_water = request.POST["Electricity_water"]
+
+        # Contact details
         phone = request.POST["Phone"]
         mail = request.POST["email"]
         in_img = request.FILES["in_img"]
         out_img = request.FILES["out_img"]
 
-        add_property = Property(address=address, rent=rent, deposit=deposit, maintenance=maintenance, phone=phone,
-                                mail=mail, uid=user.id, in_img=in_img, out_img=out_img)
+        add_property = Property(
+            address=address, Message=Description, rent=rent, deposit=deposit, maintenance=Maintenance, BHK=BHK,
+            Floor_number=Floor, Pet_allowed=Pet, Parking=Parking, Property_type=Type, Posted_by=Posted_by,
+            Agreement_duration=Agreement_duration, Available_from=Available_from, Electricity_water=Electricity_water,
+            phone=phone, mail=mail, uid=user.id, in_img=in_img, out_img=out_img)
         add_property.save()
         messages.success(request, "Property Added  successfully")
         print("saved")
@@ -156,7 +173,7 @@ def base(request):
 
 def my_property(request):
     user = request.user
-    my_property = Property.objects.filter(uid=uid)
+    my_property = Property.objects.filter(uid=user.id)
     context = {"my_property": my_property, "uid": user.id}
     return render(request, "my_property.html", context)
 
@@ -164,7 +181,8 @@ def my_property(request):
 def del_property(request, Property_id):
     del_property = Property.objects.get(id=Property_id)
     del_property.delete()
-    return redirect("my_property")
+    messages.warning(request, "Profile Updated successfully")
+    return HttpResponseRedirect("/my_property")
 
 
 def profile(request):
@@ -213,3 +231,76 @@ def profile_update(request):
     user = request.user
     context = {"user": user}
     return render(request, "profile_update.html", context)
+
+
+def site(request, pid):
+    user = request.user
+    log_in = False
+    if user is not None:
+        log_in = True
+    pid = int(pid)
+    product = Property.objects.get(id=pid)
+
+    context = {"p": product, "rent": request.get_full_path(), "log_in": log_in}
+    return render(request, "property.html", context)
+
+
+def edit_property(request, pid):
+    pid = int(pid)
+    product = Property.objects.get(id=pid)
+    context = {"p": product, "path": request.get_full_path()}
+    user = request.user
+    if request.method == "POST":
+        # Property
+        Description = request.POST.get('Description')
+        address = request.POST.get('Address')
+
+        # General information
+        rent = request.POST.get("Rent")
+        deposit = request.POST["Deposit"]
+        Maintenance = request.POST["Maintenance"]
+        BHK = request.POST["BHK"]
+        Floor = request.POST["Floor"]
+        Pet = request.POST["Pet"]
+        Parking = request.POST["Parking"]
+        Type = request.POST["Type"]
+        Posted_by = request.POST["Posted_by"]
+        Agreement_duration = request.POST["Agreement_duration"]
+        Available_from = request.POST["Available_from"]
+        Electricity_water = request.POST["Electricity_water"]
+
+        # Contact details
+        phone = request.POST["Phone"]
+        mail = request.POST["email"]
+        in_img = request.FILES["in_img"]
+        out_img = request.FILES["out_img"]
+
+        Property.objects.filter(id=pid).update(
+            address=address, Message=Description, rent=rent, deposit=deposit, maintenance=Maintenance, BHK=BHK,
+            Floor_number=Floor, Pet_allowed=Pet, Parking=Parking, Property_type=Type, Posted_by=Posted_by,
+            Agreement_duration=Agreement_duration, Available_from=Available_from, Electricity_water=Electricity_water,
+            phone=phone, mail=mail, uid=user.id, in_img=in_img, out_img=out_img)
+
+        messages.success(request, "Property Updated successfully")
+        print("saved")
+        return render(request, "my_property.html")
+
+    return HttpResponseRedirect("/my_property")
+
+
+def appointment(request,pid):
+    user = request.user
+    if request.method == "POST":
+        product = Property.objects.get(id=pid)
+        owner_id = product.uid
+        appointment_date_time = request.POST["date_time"]
+        message = request.POST["message"]
+        user_id = user.id
+        print(f"owner_id: {owner_id},appointment_date_time: {appointment_date_time},message: {message},user_id:{user_id}")
+        # user = request.user
+        # pid = int(pid)
+        # product = Property.objects.get(id=pid)
+        # context = {"product": product}
+        # send_mail("Property you request", "body", "team.rentaport@gmail.com",
+        #           [user.email], fail_silently=True)
+    return render(request, "appointment_mail_sent.html")

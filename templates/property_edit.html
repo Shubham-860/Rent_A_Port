@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% block title %}
+
+{% endblock title %}
+{% block body %}
+    {% load static %}
+
+    <section class="py-5 mt-5">
+        <div class="container">
+            <form method="post" action="/edit_property" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2 class="fw-bold">Update Your Property</h2>
+                        <p class="text-muted w-lg-50">Check all fields before updating</p>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto mb-3">
+                    <div class="col-12 col-sm-12 col-md-12 col-xxl-12">
+                        <h1 class="mb-3">Property<br/></h1>
+                    </div>
+                    <div class="col">
+                        <div class="mb-2"><label class="form-label fs-5 mx-3" for="Address">Description
+                            :</label><textarea class="form-control form-control-sm w-100 rounded bg-light text-black"
+                                               name="Description" placeholder="Description " rows="2" required
+                                               maxlength="500">{{ p.Message }}</textarea></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-2"><label class="form-label fs-5 mx-3" for="Address">Address :</label><textarea
+                                class="form-control form-control-sm w-100 rounded bg-light text-black" name="Address"
+                                placeholder="Address" rows="2" required minlength="10"
+                                maxlength="500">{{ p.address }}</textarea></div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
+                    <div class="col-xxl-auto my-3">
+                        <h1>General information<br/></h1>
+                    </div>
+                </div>
+                <div class="row row-cols-md-2 justify-content-center mx-auto">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3">Rent :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="number"
+                               name="Rent" placeholder="Rent" required value="{{ p.rent }}"/>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3">Deposit :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="number"
+                               name="Deposit" placeholder="Deposit" required value="{{ p.deposit }}"/>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3">
+                        <div><label class="form-label fs-5 mx-3">Maintenance :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="number"
+                               name="Maintenance" placeholder="Maintenance " required value="{{ p.maintenance }}"/>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Bed Hall Kitchen :</label><select
+                                class="form-select form-select-sm bg-light text-black" required name="BHK"
+                                value="{{ p.BHK }}">
+                            <option value="HK">HK</option>
+                            <option value="1">1 BHK</option>
+                            <option value="2">2 BHK</option>
+                            <option value="3">3 BHK</option>
+                            <option value="4">4 BHK</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Floor number:</label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Floor"
+                                value="{{ p.Floor_number }}">
+                            <option value="Ground floor">Ground floor</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Pet-allowed:<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Pet" value="No">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Cats only">Cats only</option>
+                            <option value="Dogs only">Dogs only</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Parking :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Parking"
+                                value="{{ p.Parking }}">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Bike only">Bike only</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Property type :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Type"
+                                value="{{ p.Property_type }}">
+                            <option value="Row House">Row House</option>
+                            <option value="Apartment ">Apartment</option>
+                            <option value="Banglo">Banglo</option>
+                            <option value="Other">Other</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Posted by :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required name="Posted_by"
+                                value="{{ p.Posted_by }}">
+                            <option value="Owner">Owner</option>
+                            <option value="Dear">Dear</option>
+                            <option value="Other">Other</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Agreement duration :<br/></label><select
+                                class="form-select form-select-sm bg-light text-black" required
+                                name="Agreement_duration" value="{{ p.Agreement_duration }}">
+                            <option value="No">No</option>
+                            <option value="3 Months">3 Months</option>
+                            <option value="6 Months">6 Months</option>
+                            <option value="9 Months">9 Months</option>
+                            <option value="1 Year">1 Year</option>
+                        </select></div>
+                    </div>
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 col-xxl-4 my-3"
+                    >
+                        <div><label class="form-label fs-5 mx-3">Available from :<br/></label><input
+                                class="form-control form-control-sm bg-light text-black" type="date" required
+                                style="border-radius: 16px;" name="Available_from" value="
+                                {{ p.Available_from }}" /></div></div><div class="col-10 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-3" ><div><label class="form-label fs-5 mx-3">Electricity and water charges :<br /></label><select class="form-select form-select-sm bg-light text-black" required name="Electricity_water" value="{{ p.Electricity_water }}">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
+                    <div class="col-xxl-auto my-3">
+                        <h1>Contact details<br/></h1>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
+                    <div class="col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3">Phone number :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="tel" name="Phone"
+                               placeholder="Phone number" required value="{{ p.phone }}"/>
+                    </div>
+                    <div class="col-xxl-6 my-3">
+                        <div><label class="form-label fs-5 mx-3">Email :</label></div>
+                        <input class="form-control form-control-sm rounded bg-light text-black" type="email"
+                               name="email" placeholder="Email" required value="{{ p.mail }}"/>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
+                    <div class="col-xxl-auto my-3">
+                        <h1>Images</h1>
+                        <p class="text-muted">Please inset Images again</p>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
+                    <div class="col-12 my-3">
+                        <div><label class="form-label fs-5 mx-3">Inside Image :</label><input
+                                class="form-control form-control-sm rounded bg-light text-black" type="file"
+                                accept="image/*" required name="in_img" value="{{ p.in_img.url }}"/></div>
+                    </div>
+                    <div class="col-12 my-3">
+                        <div><label class="form-label fs-5 mx-3">Outside Image :</label><input
+                                class="form-control form-control-sm rounded bg-light text-black" type="file"
+                                accept="image/*" required name="out_img" value="{{ p.out_img.url }}"/></div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 mx-auto">
+                    <div class="col-12 my-3 w-100">
+                        <div class="d-xxl-flex justify-content-xxl-center">
+                            <button class="btn btn-primary w-25 mx-3" type="submit">Edit</button>
+                            <a class="btn btn-warning w-25 mx-3" role="button"
+                               href="{% url 'del_property' p.id %}">Delete</a></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+{% endblock body %}

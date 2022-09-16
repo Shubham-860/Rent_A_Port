@@ -10,70 +10,71 @@
 
     {% if my_property %}
 
+        {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" style="z-index: 20;" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
 
-
-        <section class="container py-5 mt-5">
+        <section class="container py-5 mt-1">
             <div class="py-5">
-                <div class="row mx-auto" style="/*max-width: 700px;*/">
-                    <div class="col text-center">
-                        <h1>Images</h1>
-                    </div>
-                    <div class="col text-center">
-                        <h1>Charges</h1>
-                    </div>
-                    <div class="col text-center">
-                        <h1>Contact</h1>
-                    </div>
-                    <div class="col text-center">
-                        <h1>Address</h1>
-                    </div>
-                    <div class="col text-center">
-                        <h1>Delete</h1>
-                    </div>
-                </div>
 
+                <h1 class="text-center mb-3">All Property</h1>
                 {% for p in my_property %}
 
-                    <div class="row mx-auto">
-
-                    <div class="col-xxl-3 h-50">
-                        <div class="d-lg-flex d-xl-flex d-xxl-flex">
-                            <div class="m-3"><a href="{{ p.in_img.url }}"
-                                                target="_blank"><img class="rounded img-fluid shadow fit-cover"
-                                                                     src="{{ p.in_img.url }}"
-                                                                     style="max-height: 135px;"/></a></div>
-                            <div class="m-3"><a href="{{ p.out_img.url }}"
-                                                target="_blank"><img class="rounded img-fluid shadow fit-cover"
-                                                                     src="{{ p.out_img.url }}"
-                                                                     style="max-height: 135px;"/></a></div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <p class="mb-1">Rent : {{ p.rent }}</p>
-                        <p class="mb-1">Deposit : {{ p.deposit }}</p>
-                        <p class="mb-1">Maintenance : {{ p.maintenance }}</p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-1">Phone: {{ p.phone }}</p>
-                        <p class="mb-1">Mail : {{ p.mail }}</p>
-                    </div>
-                    <div class="col">
-                        <p class="mb-1">Address :</p>{{ p.address }}
-
-                        </p>
-                    </div>
-                    <div class="col d-xxl-flex justify-content-xxl-center pt-3">
-                        <div>
-                            <a href="{% url 'del_property' p.id %}">
-                                <svg class="bi bi-trash fs-1 text-warning" xmlns="http://www.w3.org/2000/svg"
-                                     width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
-                                    <path fill-rule="evenodd"
-                                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
-                                </svg>
+                    <div class="row container mx-auto">
+                        <div class="col-sm-10 col-md-10 col-lg-7 col-xl-7 col-xxl-7">
+                            <a href="{% url 'site' p.id %}">
+                                <div class="d-lg-flex d-xl-flex d-xxl-flex">
+                                    <div class="w-100 m-3"><img
+                                            class="rounded img-fluid shadow w-100 fit-cover zoom"
+                                            src="{{ p.in_img.url }}"
+                                            style="height: 200px;"/></div>
+                                    <div class="w-100 m-3"><img
+                                            class="rounded img-fluid shadow w-100 fit-cover zoom"
+                                            src="{{ p.out_img.url }}" style="height: 200px;"/></div>
+                                </div>
                             </a>
                         </div>
-                    </div>
+                        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 d-flex align-items-center align-items-center">
+                            <a href="{% url 'site' p.id %}">
+                                <div class="mt-2">
+
+                                    <div class="mb-1"><span>Configuration :</span><span>  {{ p.BHK }}</span></div>
+                                    <div><span>Rent :</span><span>  ₹ {{ p.rent }}</span></div>
+                                    <div class="mb-1">
+                                        <span>Property type:  </span><span>{{ p.Property_type }}</span></div>
+                                    <div class="mb-1"><span>Posted  On : </span><span>{{ p.Posted_on }}</span></div>
+                                    <p class="mt1">Address : {{ p.address }}</p>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-2 col-sm-1 col-xl-1 col-xxl-1 d-flex align-items-center justify-content-center">
+                            <div>
+                                <div class="my-2">
+                                    <a href="{% url 'edit_property' p.id %}">
+                                        <svg class="bi bi-pencil fs-3 text-primary" xmlns="http://www.w3.org/2000/svg"
+                                             width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <br/>
+                                <div class="my-2">
+                                    <a href="{% url 'del_property' p.id %}">
+                                        <svg class="bi bi-trash fs-3 text-warning" xmlns="http://www.w3.org/2000/svg"
+                                             width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                                             style="font-size: 16px;">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                            <path fill-rule="evenodd"
+                                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
@@ -81,8 +82,11 @@
         </section>
     {% else %}
         <div>
-            <h1 class="d-xxl-flex justify-content-xxl-center">Empty</h1>
-            <h1 class="d-xxl-flex justify-content-xxl-center">List your property for <a href="/add">rent</a></h1>
+            <h1 class="d-xxl-flex justify-content-xxl-center pt-5 mt-5">Empty</h1>
+            <h1 class="d-xxl-flex justify-content-xxl-center">List your property for rent</h1>
+            <div class="d-flex justify-content-center py-5 mb-5">
+                <a class="btn btn-primary rounded-1" href="/add" role="button">Rent</a>
+            </div>
         </div>
     {% endif %}
 {% endblock body %}

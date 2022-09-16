@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+
+{% endblock title%}
+{% block body %}
+{% load static %}
+
+<section class="py-5 mt-5">
+    <div class="container py-5">
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold">Email sent successfully</h2>
+            </div>
+        </div>
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-8 text-center mx-auto"><img class="img-fluid border rounded img-thumbnail" src="{% static 'assets/img/gif/dfsd.gif' %}" /></div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock body %}
