@@ -42,8 +42,8 @@
                     </div>
                     <div class="col-5 col-sm-3 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center mt-2">
                         <div class="mb-4"><label id="fname" class="form-label pb-2">First Name :  </label></div>
-                        <div class="mb-4"><label id="username" class="form-label pb-2">Username :  </label></div>
                         <div class="mb-4"><label id="lname" class="form-label pb-2">last Name : </label></div>
+                        <div class="mb-4"><label id="username" class="form-label pb-2">Username :  </label></div>
                         <div class="mb-4"><label id="lname" class="form-label pb-2">E-mail : </label></div>
 
                     </div>
@@ -52,14 +52,11 @@
                                                  value="{{ user.first_name }}"
                                                  placeholder="First Name : "/>
                         </div>
-                        <div class="mb-3"><input class="form-control-sm w-100" name="username" type="text"
-                                                 value="{{ user.username }}"
-                                                 placeholder="username "/>
-                        </div>
                         <div class="mb-3"><input class="form-control-sm w-100" name="lname" type="text"
                                                  value="{{ user.last_name }}"
-                                                 placeholder="last Name : "/>
+                            placeholder="last Name : "/>
                         </div>
+                        <div class="mb-3"><input class="form-control-sm w-100" name="username" type="text" value="{{ user.username }}" placeholder="username "/></div>
                         <div class="mb-3"><input class="form-control-sm w-100" name="lname" type="text"
                                                  value="{{ user.email }}"
                                                  placeholder="last Name : " readonly/>

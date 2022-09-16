@@ -1,56 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/RAP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/gif/37a6d711288081.560f55657336f.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Rough.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base2.0.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/change_password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/contactInfoMailSent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/password_reset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/password_reset_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/password_reset_sent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/profile_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RAP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAP/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAP/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0002_content_date.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0003_rename_content_contactform.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0004_property.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0005_alter_property_deposit_alter_property_maintenance_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0006_property_img.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0007_rename_img_property_in_img_property_out_img.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0008_remove_property_out_img.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0009_property_out_img.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0010_newsletter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/views.py" afterDir="false" />
+    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="change pass&#10;mail half">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/my_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/my_property.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/property.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/propertys.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile_update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +15,13 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -67,19 +29,29 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EUfX6yqI0ZeoqXkoXnxeNYHxSW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Python\RAP\static\assets\img\gif" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="RAP" type="Python.DjangoServer" factoryName="Django server">
       <module name="RAP" />
@@ -114,8 +86,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662655120120</updated>
-      <workItem from="1662655212750" duration="454000" />
+      <workItem from="1662655212750" duration="521000" />
+      <workItem from="1662725254510" duration="17963000" />
+      <workItem from="1662805314562" duration="603000" />
+      <workItem from="1663104329633" duration="14463000" />
+      <workItem from="1663322242278" duration="1475000" />
     </task>
+    <task id="LOCAL-00001" summary="change pass&#10;mail half">
+      <created>1662655701542</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662655701542</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change pass&#10;mail half">
+      <created>1662655720730</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662655720730</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,5 +122,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change pass&#10;mail half" />
+    <option name="LAST_COMMIT_MESSAGE" value="change pass&#10;mail half" />
   </component>
 </project>
