@@ -47,6 +47,8 @@ class Appointment(models.Model):
     uuid = models.CharField(max_length=100)
     appointment_set = models.BooleanField()
 
+
+
 class Site(models.Model):
     # validation
     show = models.BooleanField(default=False)
@@ -63,13 +65,13 @@ class Site(models.Model):
     deposit = models.IntegerField()
     maintenance = models.IntegerField()
     BHK = models.CharField(max_length=15, default="1 BHK")
-    Floor_number = models.CharField(max_length=10, default="Ground floor")
+    Floor_number = models.CharField(max_length=15, default="Ground floor")
     Pet_allowed = models.CharField(max_length=15, default="No")
     Parking = models.CharField(max_length=15, default="Yes")
     Property_type = models.CharField(max_length=15, default="House")
     Posted_by = models.CharField(max_length=15, default="House")
     Agreement_duration = models.CharField(max_length=15, default="No")
-    Electricity_water = models.CharField(max_length=15, default="No")
+    Electricity_water = models.CharField(max_length=20, default="Charges not included")
     Available_from = models.DateField()
     Posted_on = models.DateTimeField(auto_now_add=True)
 

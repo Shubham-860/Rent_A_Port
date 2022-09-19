@@ -1,20 +1,15 @@
 import uuid
-
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, HttpResponse, redirect
-from django.contrib.auth.forms import UserChangeForm
+from datetime import datetime
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
 from rent_a_port.models import ContactForm, NewsLetter, Appointment
 from rent_a_port.models import Site as Property
-from datetime import datetime
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
 
 
-# from django.contrib.auth import get_user_model
 
 # Create your views here.
 
