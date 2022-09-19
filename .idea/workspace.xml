@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="everything working&#10;(except mail verification)">
-      <change afterPath="$PROJECT_DIR$/rent_a_port/migrations/0015_alter_site_agreement_duration_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rent_a_port/migrations/0016_alter_site_agreement_duration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c3dbe713-b16d-441b-beb8-5fe9c32031d7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c3dbe713-b16d-441b-beb8-5fe9c32031d7.xml" afterDir="false" />
+    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="everything working&#10;(except mail verification)&#10;19-9-2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/property/add-property.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/property/add-property.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rent_a_port/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +103,7 @@
       <workItem from="1663451101893" duration="2602000" />
       <workItem from="1663496728018" duration="1309000" />
       <workItem from="1663601042593" duration="2478000" />
+      <workItem from="1663610815458" duration="111000" />
     </task>
     <task id="LOCAL-00001" summary="change pass&#10;mail half">
       <created>1662655701542</created>
@@ -154,7 +147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663368127882</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="everything working&#10;(except mail verification)&#10;19-9-2022">
+      <created>1663610859207</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663610859207</updated>
+    </task>
+    <task id="LOCAL-00008" summary="everything working&#10;(except mail verification)&#10;19-9-2022">
+      <created>1663610886946</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663610886946</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +182,7 @@
     <MESSAGE value="change pass&#10;mail half" />
     <MESSAGE value="change pass&#10;mail edit" />
     <MESSAGE value="everything working&#10;(except mail verification)" />
-    <option name="LAST_COMMIT_MESSAGE" value="everything working&#10;(except mail verification)" />
+    <MESSAGE value="everything working&#10;(except mail verification)&#10;19-9-2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything working&#10;(except mail verification)&#10;19-9-2022" />
   </component>
 </project>

@@ -2,13 +2,6 @@ from django.contrib.auth import views as auth_views
 from django.urls import path
 from rent_a_port import views
 
-
-
-
-
-
-
-
 urlpatterns = [
     path('', views.index, name="home"),
     path('index', views.index, name="home"),
@@ -26,14 +19,13 @@ urlpatterns = [
     path('my_property', views.my_property, name="my_property"),
     path('profile', views.profile, name="profile"),
     path('profile_update', views.profile_update, name="profile_update"),
-    path('change_password/', auth_views.PasswordChangeView.as_view(template_name='Password/change_password.html'), name="change_password/"),
+    path('change_password/', auth_views.PasswordChangeView.as_view(template_name='Password/change_password.html'),
+         name="change_password/"),
     path('appointment/<pid>', views.appointment, name="appointment"),
     path('confirm_appointment/<uid>/', views.confirm_appointment, name="confirm_appointment"),
 
     # temp
     path('contactInfoMail/<pid>/<abcd>', views.rough, name="contactInfoMail"),
-
-
 
     # path('base', views.base, name="base"),
     path('del_property/<Property_id>', views.del_property, name="del_property"),
