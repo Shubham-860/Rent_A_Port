@@ -10,7 +10,6 @@ from rent_a_port.models import ContactForm, NewsLetter, Appointment
 from rent_a_port.models import Site as Property
 
 
-
 # Create your views here.
 
 def index(request):
@@ -355,4 +354,4 @@ Group Rent A Port
         send_mail("Meeting confirmed", body, "team.rentaport@gmail.com",
                   [user.email], fail_silently=False)
     content = {"already_set": meeting.appointment_set}
-    return render(request, "appointment/confirm appointment.html",content)
+    return render(request, "appointment/confirm appointment.html", content)
