@@ -19,10 +19,15 @@ urlpatterns = [
     path('my_property', views.my_property, name="my_property"),
     path('profile', views.profile, name="profile"),
     path('profile_update', views.profile_update, name="profile_update"),
-    path('change_password/', auth_views.PasswordChangeView.as_view(template_name='Password/change_password.html'),
-         name="change_password/"),
+    path('change_password/', auth_views.PasswordChangeView.as_view(template_name='Password/change_password.html'), name="change_password/"),
     path('appointment/<pid>', views.appointment, name="appointment"),
     path('confirm_appointment/<uid>/', views.confirm_appointment, name="confirm_appointment"),
+
+    # email_verification
+    path('email_verification', views.email_verification, name="email_verification"),
+    path('verification_done/<token>/', views.verification_done, name="verification_done"),
+    path('verification_required', views.verification_required, name="verification_required"),
+
 
     # temp
     path('contactInfoMail/<pid>/<abcd>', views.rough, name="contactInfoMail"),

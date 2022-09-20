@@ -2,48 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="everything working&#10;(except mail verification)&#10;19-9-2022">
-      <change beforePath="$PROJECT_DIR$/.idea/RAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RAP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rent_a_port/migrations/0017_emailverification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/gif/green-tick.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/gif/how-to-send-a-gif-in-an-email-9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/gif/neon-sign-neon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/email verification done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/verification mail sent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/verification required.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc5be74b-d775-4c7e-886d-c772e24700aa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bc5be74b-d775-4c7e-886d-c772e24700aa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c3dbe713-b16d-441b-beb8-5fe9c32031d7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c3dbe713-b16d-441b-beb8-5fe9c32031d7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0011_property_show.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/migrations/0011_property_show.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0012_site.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/migrations/0012_site.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0013_appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/migrations/0013_appointment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0014_alter_site_floor_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/migrations/0014_alter_site_floor_number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0015_alter_site_agreement_duration_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/migrations/0015_alter_site_agreement_duration_and_more.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/migrations/0016_alter_site_agreement_duration.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/migrations/0016_alter_site_agreement_duration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rent_a_port/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rent_a_port/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rent_a_port/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Password/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Password/password_reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Password/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Password/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Password/password_reset_sent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Password/password_reset_sent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Temp/Rough.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Temp/Rough.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Temp/contactInfoMailSent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Temp/contactInfoMailSent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Temp/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Temp/temp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/appointment_mail_sent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/appointment_mail_sent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appointment/confirm appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appointment/confirm appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base/base2.0.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base2.0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/property/my_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/property/my_property.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/property/property all prop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/property/property all prop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/property/property_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/property/property_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/property/propertys.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/property/propertys.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,29 +46,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "SQL-Insert-Statements.sql.groovy",
-    "database.data.extractors.current.id": "Comma-separated (CSV)_id",
-    "last_opened_file_path": "F:/Python/RAP/static/assets/img/gif",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL-Insert-Statements.sql.groovy&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Python/RAP/static/assets/img/gif&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Python\RAP\static\assets\img\gif" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Python\RAP\static\assets\img\gif" />
       <recent name="F:\Python\RAP\templates\base" />
       <recent name="F:\Python\RAP\templates" />
       <recent name="F:\Python\RAP\templates\Temp" />
       <recent name="F:\Python\RAP\templates\property" />
-      <recent name="F:\Python\RAP\templates\Password" />
     </key>
   </component>
   <component name="RunManager">
@@ -145,7 +116,7 @@
       <workItem from="1663496728018" duration="1309000" />
       <workItem from="1663601042593" duration="2478000" />
       <workItem from="1663610815458" duration="111000" />
-      <workItem from="1663689145848" duration="637000" />
+      <workItem from="1663699714841" duration="7196000" />
     </task>
     <task id="LOCAL-00001" summary="change pass&#10;mail half">
       <created>1662655701542</created>

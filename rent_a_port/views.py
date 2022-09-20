@@ -7,7 +7,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from rent_a_port.models import ContactForm, NewsLetter, Appointment
+from rent_a_port.models import ContactForm, NewsLetter, Appointment, EmailVerification
 from rent_a_port.models import Site as Property
 
 
@@ -34,15 +34,15 @@ def loginu(request, previous_url=0):
 
         if user is not None:
             login(request, user)
-            fname = user.first_name
-            return render(request, "index.html", {'fname': fname, "username": username})
+
+            verification = EmailVerification.objects.get(user_id=user.id)
+            if not verification.is_verified:
+                return render(request, "verification required.html")
+            return render(request, "index.html")
         else:
             messages.error(request, "bad credentials")
-    previous_url = int(previous_url)
-    if previous_url == 0:
-        return render(request, "login.html")
-    else:
-        return HttpResponseRedirect(previous_url)
+
+    return render(request, "login.html")
 
 
 def logoutu(request):
@@ -79,10 +79,44 @@ def signup(request):
             myuser.contact_number = contact_number
 
             myuser.save()
+            new_user = User.objects.get(username=username)
+            uid = new_user.id
+            mail = new_user.email
+            # send_verification_link(request, new_user.id, new_user.email)
 
-            messages.success(request, "Account created successfully")
+            value = False
+            try:
+                exists = EmailVerification.objects.get(user_id=uid)
+                if exists is not None:
+                    value = True
+            except:
+                value = False
+            if value:
+                new_user = EmailVerification.objects.get(user_id=uid)
+                token = new_user.token
+            else:
+                token = uuid.uuid1()
+                new_user = EmailVerification(user_id=uid, token=token, mail=mail)
+                new_user.save()
 
-            return redirect('login')
+            print("Verification mail has been sent to your E-mail address")
+
+            body = f'''
+            To confirm your email, go to the following link: 
+
+            http://{get_current_site(request)}/verification_done/{token}/
+
+            Team Rent A Port
+                            '''
+            send_mail("Schedule a meeting", body, "team.rentaport@gmail.com",
+                      [mail], fail_silently=False)
+
+            return render(request, "verification mail sent.html")
+
+
+            # messages.success(request, "Account created successfully")
+
+            # return redirect('login')
 
     return render(request, "signup.html")
 
@@ -356,3 +390,49 @@ Group Rent A Port
                   [user.email], fail_silently=False)
     content = {"already_set": meeting.appointment_set}
     return render(request, "appointment/confirm appointment.html", content)
+
+
+def email_verification(request):
+    content = {}
+    return render(request, "verification mail sent.html", content)
+
+
+def verification_done(request, token):
+    EmailVerification.objects.filter(token=token).update(is_verified=True)
+    return render(request, "email verification done.html")
+
+
+def verification_required(request):
+    return render(request, "verification required.html")
+
+
+def send_verification_link(request, uid, mail):
+#     value = False
+#     try:
+#         exists = EmailVerification.objects.get(user_id=uid)
+#         if exists is not None:
+#             value = True
+#     except:
+#         value = False
+#     if value:
+#         new_user = EmailVerification.objects.get(user_id=uid)
+#         token = new_user.token
+#     else:
+#         token = uuid.uuid1()
+#         new_user = EmailVerification(user_id=uid, token=token, mail=mail)
+#         new_user.save()
+#
+#     print("Verification mail has been sent to your E-mail address")
+#
+#     body = f'''
+# To confirm your email, go to the following link:
+#
+# http://{get_current_site(request)}/verification_done/{token}/
+#
+# Team Rent A Port
+#                 '''
+#     send_mail("Schedule a meeting", body, "team.rentaport@gmail.com",
+#               [mail], fail_silently=False)
+#
+#     return redirect('verification mail sent')
+    pass

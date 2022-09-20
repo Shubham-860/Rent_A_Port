@@ -15,6 +15,12 @@ class ContactForm(models.Model):
         return self.name
 
 
+class EmailVerification(models.Model):
+    user_id = models.IntegerField()
+    token = models.CharField(max_length=100)
+    mail = models.CharField(max_length=100)
+    is_verified = models.BooleanField(default=False)
+
 def filepath(request, filename):
     old_filename = filename
     timeNow = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
@@ -46,7 +52,6 @@ class Appointment(models.Model):
     property_id = models.IntegerField()
     uuid = models.CharField(max_length=100)
     appointment_set = models.BooleanField()
-
 
 
 class Site(models.Model):

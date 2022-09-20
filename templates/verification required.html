@@ -1,0 +1,27 @@
+{% extends 'base/base2.0.html' %}
+{% block title %}
+
+{% endblock title %}
+{% block body %}
+    {% load static %}
+
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center mx-auto h-75">
+                    <h1 class="fw-bold m-4">Email is not verified.<br/></h1>
+                    <img class="img-thumbnail img-fluid border rounded-circle border-1 border-dark shadow-sm"
+                        src="{% static 'assets/img/gif/neon-sign-neon.gif' %}"style="max-height: 350px;"/>
+                </div>
+            </div>
+{#            <div class="row">#}
+{#                <div class="col text-center mx-auto h-75">#}
+{#                    <h4 class="fw-bold m-4">Click <a class="link-primary" href="">here</a> to generate another#}
+{#                        link<br/></h4>#}
+{#                </div>#}
+{#            </div>#}
+        </div>
+    </section>
+
+
+{% endblock body %}
