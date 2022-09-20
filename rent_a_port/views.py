@@ -3,6 +3,7 @@ from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
@@ -318,7 +319,7 @@ message: {message}
 
 To confirm, go to the following link: 
 
-http://127.0.0.1:8000/confirm_appointment/{uid}/
+http://{get_current_site(request)}/confirm_appointment/{uid}/
 
 OR
 
