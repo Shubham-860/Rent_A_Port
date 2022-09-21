@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="for deployment">
-      <change beforePath="$PROJECT_DIR$/RAP/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +106,7 @@
       <workItem from="1663610815458" duration="111000" />
       <workItem from="1663699714841" duration="7301000" />
       <workItem from="1663788067647" duration="1547000" />
-      <workItem from="1663789789032" duration="1926000" />
+      <workItem from="1663789789032" duration="2226000" />
     </task>
     <task id="LOCAL-00001" summary="change pass&#10;mail half">
       <created>1662655701542</created>
@@ -184,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663791086024</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="for deployment">
+      <created>1663791777084</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663791777084</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
