@@ -1,1 +1,0 @@
-web: gunicorn rent_a_port.wsgi --log-file -
