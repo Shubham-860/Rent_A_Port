@@ -14,6 +14,7 @@ import os.path
 from pathlib import Path
 from django.contrib.messages import constants as message_constants
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -150,3 +151,7 @@ EMAIL_HOST_PASSWORD = 'pvpwcvryrykilaqm'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Rent A Port Team <noreply@rentaport.com>'
+
+
+import django_heroku
+django_heroku.settings(locals())
