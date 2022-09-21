@@ -37,6 +37,7 @@ def loginu(request, previous_url=0):
 
             verification = EmailVerification.objects.get(user_id=user.id)
             if not verification.is_verified:
+                logout(request)
                 return render(request, "verification required.html")
             return render(request, "index.html")
         else:
