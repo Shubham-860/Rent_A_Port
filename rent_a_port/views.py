@@ -34,14 +34,16 @@ def loginu(request, previous_url=0):
 
         if user is not None:
             login(request, user)
-
-            verification = EmailVerification.objects.get(user_id=user.id)
-            if not verification.is_verified:
-                logout(request)
-                return render(request, "verification required.html")
-            return render(request, "index.html")
+            try:
+                verification = EmailVerification.objects.get(user_id=user.id)
+                if not verification.is_verified:
+                    logout(request)
+                    return render(request, "verification required.html")
+                return render(request, "index.html")
+            except:
+                return render(request, "index.html")
         else:
-            messages.error(request, "bad credentials")
+            messages.error(request, "The username or password you entered is incorrect, please try again.")
 
     return render(request, "login.html")
 
