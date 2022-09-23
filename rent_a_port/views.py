@@ -188,6 +188,7 @@ def propertys(request):
     if request.method == "POST":
 
         searched = request.POST["search"]
+        searched=searched.strip()
         print(searched)
         serched_property = Property.objects.filter(address__contains=searched)
 
@@ -259,8 +260,6 @@ def profile_update(request):
         username = request.POST["username"]
         if (user.first_name == fname) and (user.last_name == lname) and (user.username == username):
             messages.error(request, "Nothing changed")
-        elif User.objects.filter(username=username):
-            messages.error(request, "This username is taken")
         else:
             User.objects.filter(id=uid).update(first_name=fname, last_name=lname, username=username)
             messages.success(request, "Profile Updated successfully")
