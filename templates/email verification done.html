@@ -9,13 +9,9 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center mx-auto">
-                    {% if not verified %}
-                        <h1 class="fw-bold m-4">Email had already been verified.<br/></h1>
-                    {% else %}
-                        <h1 class="fw-bold m-4">Email Verified successfully.<br/></h1>
-                    {% endif %} <img
-                        class="img-thumbnail img-fluid border rounded-circle border-1 border-dark shadow-sm"
-                        src="{% static 'assets/img/gif/green-tick.gif' %}"/>
+                    <h1 class="fw-bold m-4">Email Verified successfully.<br/></h1>
+                    <img class="img-thumbnail img-fluid border rounded-circle border-1 border-dark shadow-sm"
+                            src="{% static 'assets/img/gif/green-tick.gif' %}"/>
                 </div>
             </div>
         </div>

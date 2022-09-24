@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os.path
+# import django_mailjet
 from pathlib import Path
 from django.contrib.messages import constants as message_constants
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2^q-ttj=ss&9$1ab$rz%)k_-$qu3wsd5jflnb%dc1w1t_zw$o6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', "rentaport.herokuapp.com"]
 
@@ -130,6 +132,17 @@ MESSAGE_TAGS = {message_constants.DEBUG: 'debug',
                 message_constants.WARNING: 'warning',
                 message_constants.ERROR: 'danger'}
 
+# SMTP configuration
+
+# EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
+# EMAIL_HOST = 'in-v3.mailjet.com'
+# MAILJET_API_KEY = "f741248c09f116e42a7ada22a9c4cfe5"
+# MAILJET_API_SECRET = "ace2dc6b4dc5421b9bcab27b65f65844"
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# EMAIL_TIMEOUT = 30
+# DEFAULT_FROM_EMAIL = 'Rent A Port Team <team.rentaport@gmail.com>'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -139,4 +152,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Rent A Port Team <noreply@rentaport.com>'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+import django_heroku
+django_heroku.settings(locals())
