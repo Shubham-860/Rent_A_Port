@@ -1,66 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="tyr some fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAP/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rent_a_port/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rent_a_port/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/Houses/pexels-lina-kivaka-2253916.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/Houses/pexels-matheus-bertelli-2980955.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/Houses/pexels-pixabay-210538.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/Houses/pexels-pixabay-259588.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/Houses/pexels-sevenstorm-juhaszimrus-425047.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/Houses/pexels-sevenstorm-juhaszimrus-439391.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/Houses/pexels-thgusstavo-santana-2102587 (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/blob.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/brands/apple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/brands/facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/brands/google.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/brands/microsoft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/brands/twitter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/dogs/image2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/phone-screen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/products/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/products/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/products/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/team/avatar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/team/avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/team/avatar3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/team/avatar4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/team/avatar5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/team/avatar6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724123743pexels-pixabay-210538.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724123743pexels-pixabay-259588.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724145625pexels-pixabay-259588.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724145625pexels-sevenstorm-juhaszimrus-439391.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/202207241457571438832.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724145757pexels-sebastian-sørensen-731082.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724180716pexels-curtis-adams-3935340.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724180716pexels-graphicgumcom-1115804.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724180829pexels-curtis-adams-3935338.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220724180829pexels-expect-best-323780.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220725000218pexels-curtis-adams-12908648.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220725000218pexels-graphicgumcom-1115804.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220904034029A_minimalist_but_cozy_Pune_home_designed_on_a_t_ZFVDCi3.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220904034029image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220909190019A_minimalist_but_cozy_Pune_home_designed_on_a_t_xNKrgSj.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220909190019image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220909190107A_minimalist_but_cozy_Pune_home_designed_on_a_t_AZAUweM.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220909190107image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220918165025iStock_1223022367.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220918165025photo-1613545325278-f24b0cae1224.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220918165309best_exterior_paint_colors_gray.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220918165309photo-1616137466211-f939a420be84.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220918165531Cat-Mountain-Residence-by-Cornerstone-Architects.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220918165531iStock_1223022367.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220922131241photo-1613545325278-f24b0cae1224.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220924132902Beautiful-Homes-This-Mumbai-apartment-reminisces_mFVzrWN.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220924132902d_b_bhagawati_apartment-baranagar-kolkata-d_b_c_xivRDvl.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220924134605Thoumb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/img/uploads/20220924134605ketan01.jpg" beforeDir="false" />
-    </list>
+    <list default="true" id="c93a8421-4382-4209-820d-41c9e0154140" name="Changes" comment="tyr some fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,6 +115,7 @@
       <workItem from="1664132095978" duration="40000" />
       <workItem from="1664132174687" duration="159000" />
       <workItem from="1664739104082" duration="3687000" />
+      <workItem from="1664742820333" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="change pass&#10;mail half">
       <created>1662655701542</created>
@@ -371,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664132230564</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="tyr some fix">
+      <created>1664742924936</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1664742924936</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
