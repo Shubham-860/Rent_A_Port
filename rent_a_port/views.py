@@ -116,7 +116,6 @@ def signup(request):
 
             return render(request, "verification mail sent.html")
 
-
             # messages.success(request, "Account created successfully")
 
             # return redirect('login')
@@ -176,7 +175,8 @@ def add_p(request):
             Agreement_duration=Agreement_duration, Available_from=Available_from, Electricity_water=Electricity_water,
             phone=phone, mail=mail, uid=user.id, in_img=in_img, out_img=out_img)
         add_property.save()
-        messages.success(request, "Property Added  successfully")
+        messages.success(request,"Property Added  successfully. "
+                                 "Admin will verify the property before listing it on the website.")
         print("saved")
         return render(request, "property/add-property.html")
 
@@ -188,7 +188,7 @@ def propertys(request):
     if request.method == "POST":
 
         searched = request.POST["search"]
-        searched=searched.strip()
+        searched = searched.strip()
         print(searched)
         serched_property = Property.objects.filter(address__contains=searched)
 
@@ -409,32 +409,32 @@ def verification_required(request):
 
 
 def send_verification_link(request, uid, mail):
-#     value = False
-#     try:
-#         exists = EmailVerification.objects.get(user_id=uid)
-#         if exists is not None:
-#             value = True
-#     except:
-#         value = False
-#     if value:
-#         new_user = EmailVerification.objects.get(user_id=uid)
-#         token = new_user.token
-#     else:
-#         token = uuid.uuid1()
-#         new_user = EmailVerification(user_id=uid, token=token, mail=mail)
-#         new_user.save()
-#
-#     print("Verification mail has been sent to your E-mail address")
-#
-#     body = f'''
-# To confirm your email, go to the following link:
-#
-# http://{get_current_site(request)}/verification_done/{token}/
-#
-# Team Rent A Port
-#                 '''
-#     send_mail("Schedule a meeting", body, "team.rentaport@gmail.com",
-#               [mail], fail_silently=False)
-#
-#     return redirect('verification mail sent')
+    #     value = False
+    #     try:
+    #         exists = EmailVerification.objects.get(user_id=uid)
+    #         if exists is not None:
+    #             value = True
+    #     except:
+    #         value = False
+    #     if value:
+    #         new_user = EmailVerification.objects.get(user_id=uid)
+    #         token = new_user.token
+    #     else:
+    #         token = uuid.uuid1()
+    #         new_user = EmailVerification(user_id=uid, token=token, mail=mail)
+    #         new_user.save()
+    #
+    #     print("Verification mail has been sent to your E-mail address")
+    #
+    #     body = f'''
+    # To confirm your email, go to the following link:
+    #
+    # http://{get_current_site(request)}/verification_done/{token}/
+    #
+    # Team Rent A Port
+    #                 '''
+    #     send_mail("Schedule a meeting", body, "team.rentaport@gmail.com",
+    #               [mail], fail_silently=False)
+    #
+    #     return redirect('verification mail sent')
     pass

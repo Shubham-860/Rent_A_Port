@@ -25,7 +25,7 @@ def filepath(request, filename):
     old_filename = filename
     timeNow = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     filename = str(timeNow) + str(old_filename)
-    return os.path.join('static/assets/img/uploads', filename)
+    return os.path.join('media/assets/img/uploads', filename)
 
 
 class Property(models.Model):
